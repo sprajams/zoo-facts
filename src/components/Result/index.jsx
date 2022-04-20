@@ -53,19 +53,19 @@ function Result() {
         Random Animal
       </button>
 
-      <section className="outer">
-        <h2>Animal Name:</h2>
-        <h3>{name}</h3>
-        <h2>Latin Name:</h2>
-        <h3>{latinName}</h3>
-
+      <section className="outer nocturnal">
+        <div className="nameContainer">
+          <h3>Latin Name: {latinName}</h3>
+          <h3>{name}</h3>
+        </div>
         <div className="animalContainer">
           <img src={url} alt="animal" className="animalImg"></img>
         </div>
 
-        <div>
-          <h4>{active_time}</h4>
-          <h4>{animal_type}</h4>
+        <div className="physicalInfo">
+          <h4>
+            {active_time} {animal_type}.
+          </h4>
           <h4>
             Weight: {weight_min} - {weight_max} lbs
           </h4>
