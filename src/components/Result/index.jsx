@@ -63,7 +63,7 @@ function Result() {
 
   return (
     <div>
-      <h1>ANIMALS</h1>
+      <h1 className="title">Zoo-nimals Facts</h1>
 
       <button onClick={getAnimal} className="btn btn-random">
         Random Animal
@@ -72,7 +72,7 @@ function Result() {
       <section className="outer nocturnal">
         <div className="nameContainer">
           <h3 className="name">{name}</h3>
-          <h3 className="latinName">Latin Name: {latinName}</h3>
+          <h3 className="latinName">{latinName}</h3>
         </div>
         <div className="animalContainer">
           <img src={url} alt="animal" className="animalImg"></img>
@@ -83,7 +83,7 @@ function Result() {
             {active_time} {animal_type}.
           </h4>
           <h4>
-            Weight: {weight_min} - {weight_max} lbs
+            Weight: {weight_min} - {weight_max} lbs.
           </h4>
         </div>
 
