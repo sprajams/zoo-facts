@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./style.css";
+import "./style.scss";
 
 function Result() {
   const [info, setInfo] = useState({
@@ -12,6 +12,7 @@ function Result() {
     weight_min: null,
     diet: null,
     habitat: null,
+    id: 0,
   });
 
   const getAnimal = () => {
@@ -29,6 +30,7 @@ function Result() {
           weight_min: data.weight_min,
           diet: data.diet,
           habitat: data.habitat,
+          id: data.id,
         });
       });
   };
@@ -43,6 +45,7 @@ function Result() {
     weight_min,
     diet,
     habitat,
+    id,
   } = info;
 
   return (
@@ -55,8 +58,8 @@ function Result() {
 
       <section className="outer nocturnal">
         <div className="nameContainer">
-          <h3>Latin Name: {latinName}</h3>
-          <h3>{name}</h3>
+          <h3 className="latinName">Latin Name: {latinName}</h3>
+          <h3 className="name">{name}</h3>
         </div>
         <div className="animalContainer">
           <img src={url} alt="animal" className="animalImg"></img>
@@ -71,8 +74,12 @@ function Result() {
           </h4>
         </div>
 
-        <h4>Diet: {diet}</h4>
-        <h4>Habitat: {habitat}</h4>
+        <div className="mainInfo">
+          <h4>Diet: {diet}</h4>
+          <h4>Habitat: {habitat}</h4>
+        </div>
+
+        <span className="cardNum">{id} / 200</span>
       </section>
     </div>
   );
