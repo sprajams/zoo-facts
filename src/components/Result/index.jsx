@@ -1,76 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./style.scss";
 
-function Result() {
-  const [info, setInfo] = useState({
-    name: null,
-    latinName: null,
-    url: null,
-    active_time: null,
-    animal_type: null,
-    weight_max: null,
-    weight_min: null,
-    diet: null,
-    habitat: null,
-    geo_range: null,
-    lifespan: null,
-    id: 0,
-  });
-  const [bgColor, setBgColor] = useState(null);
-
-  const getAnimal = () => {
-    fetch("https://zoo-animal-api.herokuapp.com/animals/rand")
-      .then((res) => res.json())
-      .then((data) => {
-        setBgColor(() => {
-          let newBgColor;
-          switch (data.animal_type) {
-            case "Bird":
-              newBgColor = "bg--bird";
-              break;
-            case "Mammal":
-              newBgColor = "bg--mammal";
-              break;
-            case "Reptile":
-              newBgColor = "bg--reptile";
-              break;
-            case "Fish":
-              newBgColor = "bg--fish";
-              break;
-            case "Amphibian":
-              newBgColor = "bg--amphibian";
-              break;
-            default:
-              newBgColor = "bg--default";
-          }
-          return newBgColor;
-        });
-
-        setInfo({
-          name: data.name,
-          latinName: data.latin_name,
-          url: data.image_link,
-          active_time: data.active_time,
-          animal_type: data.animal_type,
-          weight_max: data.weight_max,
-          weight_min: data.weight_min,
-          diet: data.diet,
-          habitat: data.habitat,
-          geo_range: data.geo_range,
-          lifespan: data.lifespan,
-          id: data.id,
-        });
-      });
-
-    // fetch("https://zoo-animal-api.herokuapp.com/animals/rand/3")
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     let allAnimals = data;
-
-    //     console.log(allAnimals[0]);
-    //   });
-  };
-
+function Result(props) {
+  const { info } = props;
   const {
     name,
     latinName,
@@ -85,15 +17,37 @@ function Result() {
     lifespan,
     id,
   } = info;
+  const [bgColor, setBgColor] = useState(null);
+
+  useEffect(() => {
+    let newBgColor;
+    switch (animal_type) {
+      case "Bird":
+        newBgColor = "bg--bird";
+        break;
+      case "Mammal":
+        newBgColor = "bg--mammal";
+        break;
+      case "Reptile":
+        newBgColor = "bg--reptile";
+        break;
+      case "Fish":
+        newBgColor = "bg--fish";
+        break;
+      case "Amphibian":
+        newBgColor = "bg--amphibian";
+        break;
+      default:
+        newBgColor = "bg--default";
+    }
+    setBgColor(() => {
+      return newBgColor;
+    });
+    console.log(bgColor);
+  });
 
   return (
     <div>
-      <h1 className="title">Zoo-nimals Facts</h1>
-
-      <button onClick={getAnimal} className="btn btn-random">
-        Random Animal
-      </button>
-
       <section className={`outer ${bgColor}`}>
         <div className="front ">
           <div className="nameContainer">
@@ -126,7 +80,6 @@ function Result() {
     </div>
   );
 }
-
 export default Result;
 
 // https://zoo-animal-api.herokuapp.com
