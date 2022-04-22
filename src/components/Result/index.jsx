@@ -94,32 +94,34 @@ function Result() {
         Random Animal
       </button>
 
-      <section className={`outer nocturnal ${bgColor}`}>
-        <div className="nameContainer">
-          <h3 className="name">{name}</h3>
-          <h3 className="latinName">{latinName}</h3>
-        </div>
-        <div className="animalContainer">
-          <img src={url} alt="animal" className="animalImg"></img>
-        </div>
+      <section className={`outer ${bgColor}`}>
+        <div className="front ">
+          <div className="nameContainer">
+            <h3 className="name">{name}</h3>
+            <h3 className="latinName">{latinName}</h3>
+          </div>
+          <div className="animalContainer">
+            <img src={url} alt="animal" className="animalImg"></img>
+          </div>
 
-        <div className="physicalInfo">
-          <h4>
-            {active_time} {animal_type}.
-          </h4>
-          <h4>
-            Weight: {weight_min} - {weight_max} lbs.
-          </h4>
-        </div>
+          <div className="physicalInfo">
+            <h4>
+              {active_time} {animal_type}.
+            </h4>
+            <h4>
+              Weight: {weight_min} - {weight_max} lbs.
+            </h4>
+          </div>
 
-        <div className="mainInfo">
-          <h4>Diet: {diet}</h4>
-          <h4>Habitat: {habitat}</h4>
-          <h4>Geo-Range: {geo_range}</h4>
-          <h4>Lifespan: {lifespan} years</h4>
-        </div>
+          <div className="mainInfo">
+            <h4>Diet: {diet}</h4>
+            <h4>Habitat: {habitat}</h4>
+            <h4>Geo-Range: {geo_range}</h4>
+            <h4>Lifespan: {lifespan} years</h4>
+          </div>
 
-        <span className="cardNum">{id} / 200</span>
+          <span className="cardNum">{id} / 200</span>
+        </div>
       </section>
     </div>
   );
