@@ -20,31 +20,30 @@ function Result(props) {
   const [bgColor, setBgColor] = useState(null);
 
   useEffect(() => {
-    let newBgColor;
-    switch (animal_type) {
-      case "Bird":
-        newBgColor = "bg--bird";
-        break;
-      case "Mammal":
-        newBgColor = "bg--mammal";
-        break;
-      case "Reptile":
-        newBgColor = "bg--reptile";
-        break;
-      case "Fish":
-        newBgColor = "bg--fish";
-        break;
-      case "Amphibian":
-        newBgColor = "bg--amphibian";
-        break;
-      default:
-        newBgColor = "bg--default";
-    }
     setBgColor(() => {
+      let newBgColor;
+      switch (animal_type) {
+        case "Bird":
+          newBgColor = "bg--bird";
+          break;
+        case "Mammal":
+          newBgColor = "bg--mammal";
+          break;
+        case "Reptile":
+          newBgColor = "bg--reptile";
+          break;
+        case "Fish":
+          newBgColor = "bg--fish";
+          break;
+        case "Amphibian":
+          newBgColor = "bg--amphibian";
+          break;
+        default:
+          newBgColor = "bg--default";
+      }
       return newBgColor;
     });
-    console.log(bgColor);
-  });
+  }, [animal_type, setBgColor]);
 
   return (
     <div>
