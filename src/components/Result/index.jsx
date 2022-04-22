@@ -16,12 +16,36 @@ function Result() {
     lifespan: null,
     id: 0,
   });
+  const [bgColor, setBgColor] = useState(null);
 
   const getAnimal = () => {
     fetch("https://zoo-animal-api.herokuapp.com/animals/rand")
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
+        setBgColor(() => {
+          let newBgColor;
+          switch (data.animal_type) {
+            case "Bird":
+              newBgColor = "bg--bird";
+              break;
+            case "Mammal":
+              newBgColor = "bg--mammal";
+              break;
+            case "Reptile":
+              newBgColor = "bg--reptile";
+              break;
+            case "Fish":
+              newBgColor = "bg--fish";
+              break;
+            case "Amphibian":
+              newBgColor = "bg--amphibian";
+              break;
+            default:
+              newBgColor = "bg--default";
+          }
+          return newBgColor;
+        });
+
         setInfo({
           name: data.name,
           latinName: data.latin_name,
@@ -37,13 +61,14 @@ function Result() {
           id: data.id,
         });
       });
-    fetch("https://zoo-animal-api.herokuapp.com/animals/rand/3")
-      .then((res) => res.json())
-      .then((data) => {
-        let allAnimals = data;
 
-        console.log(allAnimals[0]);
-      });
+    // fetch("https://zoo-animal-api.herokuapp.com/animals/rand/3")
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     let allAnimals = data;
+
+    //     console.log(allAnimals[0]);
+    //   });
   };
 
   const {
@@ -69,7 +94,7 @@ function Result() {
         Random Animal
       </button>
 
-      <section className="outer nocturnal">
+      <section className={`outer nocturnal ${bgColor}`}>
         <div className="nameContainer">
           <h3 className="name">{name}</h3>
           <h3 className="latinName">{latinName}</h3>
