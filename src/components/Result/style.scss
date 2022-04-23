@@ -12,16 +12,15 @@ h3 {
 }
 .outer {
   border: 15px solid rgba(255, 197, 116, 0.95);
-  padding: 10px;
   margin: 10px auto;
   border-radius: 15px;
   width: 350px;
-  height: 510px;
+  height: 525px;
   display: flex;
   flex-direction: column;
   @media (min-width: 768px) {
     width: 400px;
-    height: 520px;
+    height: 535px;
   }
 }
 
@@ -40,8 +39,19 @@ h3 {
   font-family: "Expletus Sans", cursive;
   font-style: italic;
   font-weight: 700;
+  flex: 1 1 auto;
 }
-
+.nameYear {
+  display: flex;
+  justify-content: end;
+}
+.logo {
+  flex-basis: 20%;
+}
+.yr {
+  flex-basis: 20%;
+  text-align: end;
+}
 .animalContainer {
   width: 285px;
   height: 200px;
@@ -161,18 +171,21 @@ h3 {
   flex-direction: column;
   justify-content: space-around;
   border-bottom: 2px solid rgb(255, 149, 0);
-  font-size: 0.85em;
+  font-size: 0.9em;
+  line-height: 1.25em;
 }
 .mainInfo > * {
   padding: 3px 0;
+}
+.info_element {
+  font-weight: 500;
 }
 
 .cardNum {
   display: block;
   text-align: right;
-  font-size: 0.5em;
-  padding: 5px 10px 0;
-  bottom: 20px;
+  font-size: 0.7em;
+  padding: 3px 10px 0;
 }
 
 .hidden {
@@ -182,6 +195,7 @@ h3 {
   display: flex;
   flex-direction: column;
   flex: 1;
+  padding: 5px;
 }
 .cover {
   background: repeating-linear-gradient(

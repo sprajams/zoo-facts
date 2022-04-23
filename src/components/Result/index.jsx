@@ -50,7 +50,12 @@ function Result(props) {
       <section className={`outer ${bgColor}`}>
         <div className="front ">
           <div className="nameContainer">
-            <h3 className="name">{name}</h3>
+            <div className="nameYear">
+              <div className='logo'></div>
+              <h3 className="name">{name}</h3>
+              <h3 className="yr">{lifespan} YR</h3>
+            </div>
+
             <h3 className="latinName">{latinName}</h3>
           </div>
           <div className="animalContainer">
@@ -67,10 +72,18 @@ function Result(props) {
           </div>
 
           <div className="mainInfo">
-            <h4>Diet: {diet}</h4>
-            <h4>Habitat: {habitat}</h4>
-            <h4>Geo-Range: {geo_range}</h4>
-            <h4>Lifespan: {lifespan} years</h4>
+            <h4>
+              Diet: <span className="info_element">{diet}</span>
+            </h4>
+            <h4>
+              Habitat: <span className="info_element">{habitat}</span>
+            </h4>
+            <h4>
+              Geo-Range: <span className="info_element">{geo_range}</span>
+            </h4>
+            <h4>
+              Lifespan: <span className="info_element">{lifespan}</span> years
+            </h4>
           </div>
 
           <span className="cardNum">{id} / 200</span>
