@@ -51,9 +51,12 @@ function Result(props) {
         <div className="front ">
           <div className="nameContainer">
             <div className="nameYear">
-              <div className='logo'></div>
+              <div className="logo">Z</div>
               <h3 className="name">{name}</h3>
-              <h3 className="yr">{lifespan} YR</h3>
+              <h3 className="yearNum">
+                {lifespan}
+                <span className="year">YR</span>
+              </h3>
             </div>
 
             <h3 className="latinName">{latinName}</h3>
