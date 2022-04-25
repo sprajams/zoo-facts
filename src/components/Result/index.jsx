@@ -51,7 +51,7 @@ function Result(props) {
         <div className="front ">
           <div className="nameContainer">
             <div className="nameYear">
-              <div className="logo">Z</div>
+              <div className="logo logo--small">Z</div>
               <h3 className="name">{name}</h3>
               <h3 className="yearNum">
                 {lifespan}
