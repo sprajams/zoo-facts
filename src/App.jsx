@@ -1,8 +1,8 @@
 import "./App.css";
-import "./components/Result";
+import "./components/Card";
 import { useState } from "react";
 import Input from "./components/Input";
-import Result from "./components/Result";
+import Card from "./components/Card";
 import Cover from "./components/Cover";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
   return (
     <div>
       <Input setInfo={setInfo} />
-      {info ? <Result info={info} /> : <Cover />}
+      {info ? <Card info={info} /> : <Cover />}
     </div>
   );
 }
