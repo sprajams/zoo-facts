@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./style.scss";
 
-function Result(props) {
+function Card(props) {
   const { info } = props;
   const {
     name,
@@ -95,7 +95,7 @@ function Result(props) {
     </div>
   );
 }
-export default Result;
+export default Card;
 
 // https://zoo-animal-api.herokuapp.com
 //Animal lengths are in feet (ft.)

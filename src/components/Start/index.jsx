@@ -1,6 +1,6 @@
 // import { useState } from "react";
 
-function Input(props) {
+function Start(props) {
   const { setInfo } = props;
   const getAnimal = () => {
     fetch("https://zoo-animal-api.herokuapp.com/animals/rand")
@@ -32,4 +32,4 @@ function Input(props) {
   );
 }
 
-export default Input;
+export default Start;
