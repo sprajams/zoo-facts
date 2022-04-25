@@ -1,6 +1,6 @@
 .outer {
   border: 15px solid rgba(255, 197, 116, 0.95);
-  margin: 10px auto;
+  margin: 15px auto;
   border-radius: 15px;
   width: 360px;
   height: 525px;
@@ -8,6 +8,7 @@
   flex-direction: column;
   justify-content: center;
   @media (min-width: 768px) {
+    margin: 30px auto;
     width: 400px;
     height: 535px;
   }

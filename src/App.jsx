@@ -9,8 +9,9 @@ function App() {
   const [info, setInfo] = useState(null);
   return (
     <div>
-      <Start setInfo={setInfo} />
+      <h1 className="title">Zoo-nimals Facts</h1>
       {info ? <Card info={info} /> : <Cover />}
+      <Start setInfo={setInfo} />
     </div>
   );
 }

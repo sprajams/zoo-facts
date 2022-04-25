@@ -1,4 +1,4 @@
-// import { useState } from "react";
+import "./style.scss";
 
 function Start(props) {
   const { setInfo } = props;
@@ -24,9 +24,8 @@ function Start(props) {
   };
   return (
     <div>
-      <h1 className="title">Zoo-nimals Facts</h1>
       <button className="btn btn-random" onClick={getAnimal}>
-        Random Animal
+        START
       </button>
     </div>
   );
