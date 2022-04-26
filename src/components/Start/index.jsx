@@ -41,6 +41,7 @@ function Start(props) {
 
   const start = () => {
     activeScreen();
+    toggleHidden();
     console.log(animalData);
     console.log(cardNum, "start");
   };
@@ -92,17 +93,26 @@ function Start(props) {
     }
   };
 
+  const [active, setActive] = useState(false);
+  const toggleHidden = () => {
+    setActive(true);
+  };
   return (
     <div>
-      <button className="btn btn-random" onClick={start}>
-        START
-      </button>
-      <button className="btn" onClick={nextScreen}>
-        NEXT
-      </button>
-      <button className="btn" onClick={prevScreen}>
-        PREV
-      </button>
+      <div className={`btnContainer start ${active ? `hidden` : ""}`}>
+        <button className="btn btn-random" onClick={start}>
+          START
+        </button>
+      </div>
+
+      <div className={`btnContainer btnAction ${active ? `` : "hidden"}`}>
+        <button className="btn btn--active btn--right" onClick={prevScreen}>
+          PREV
+        </button>
+        <button className="btn btn--active btn--next" onClick={nextScreen}>
+          NEXT
+        </button>
+      </div>
     </div>
   );
 }

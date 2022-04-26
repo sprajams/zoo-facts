@@ -8,7 +8,46 @@
 }
 .btn {
   display: block;
-  margin: 0 auto;
+  margin: 0px auto;
+  background: orange;
+  border-radius: 1em;
+  border: 5px solid rgba(255, 197, 116, 1);
   padding: 10px;
+  width: 100%;
   font-family: "Expletus Sans", cursive;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+.btnContainer {
+  width: 340px;
+  margin: 0 auto 15px;
+}
+.btnAction {
+  display: flex;
+  justify-content: space-between;
+}
+.btn--active {
+  background: white;
+  border: 5px solid rgba(255, 197, 116, 1);
+  flex-basis: 48%;
+}
+.btn--next {
+  margin-right: 0;
+}
+.btn--right {
+  margin-left: 0;
+}
+.hidden {
+  display: none;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(218, 196, 176, 0.65),
+    rgba(218, 196, 176, 0.65) 30px,
+    rgba(224, 206, 190, 0.65) 30px,
+    rgba(215, 191, 169, 0.65) 50px
+  );
 }
