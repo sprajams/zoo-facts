@@ -40,41 +40,51 @@ function Start(props) {
   }, []);
 
   const start = () => {
-    activeScreen();
     toggleHidden();
-    console.log(animalData);
-    console.log(cardNum, "start");
+    setCardNum(0);
+    console.log("started");
   };
 
-  const [cardNum, setCardNum] = useState(0);
-
-  const nextAnimal = () => {
-    setCardNum(cardNum + 1);
-  };
-
-  const prevAnimal = () => {
-    setCardNum(cardNum - 1);
-  };
+  const [cardNum, setCardNum] = useState(NaN);
 
   const nextScreen = () => {
-    if (cardNum < 5) {
-      activeScreen();
-      nextAnimal();
-      console.log(cardNum, "next");
+    if (cardNum < 4) {
+      setCardNum(cardNum + 1);
+      console.log("next");
     }
   };
 
   const prevScreen = () => {
-    if (cardNum < 5 && cardNum > 0) {
-      prevAnimal();
-      activeScreen();
-      console.log(cardNum, "prev");
+    if (cardNum > 0) {
+      setCardNum(cardNum - 1);
+      console.log("prev");
     }
   };
+  console.log(cardNum);
+  // const activeScreen = () => {
+  //   console.log(cardNum, "active");
+  //   if (animalData) {
+  //     let activeAnimal = animalData[cardNum];
+  //     setInfo({
+  //       name: activeAnimal.name,
+  //       latinName: activeAnimal.latin_name,
+  //       url: activeAnimal.image_link,
+  //       active_time: activeAnimal.active_time,
+  //       animal_type: activeAnimal.animal_type,
+  //       weight_max: activeAnimal.weight_max,
+  //       weight_min: activeAnimal.weight_min,
+  //       diet: activeAnimal.diet,
+  //       habitat: activeAnimal.habitat,
+  //       geo_range: activeAnimal.geo_range,
+  //       lifespan: activeAnimal.lifespan,
+  //       id: activeAnimal.id,
+  //     });
+  //   }
+  // };
 
-  const activeScreen = () => {
+  useEffect(() => {
     console.log(cardNum, "active");
-    if (animalData) {
+    if (animalData && animalData[cardNum]) {
       let activeAnimal = animalData[cardNum];
       setInfo({
         name: activeAnimal.name,
@@ -91,12 +101,17 @@ function Start(props) {
         id: activeAnimal.id,
       });
     }
-  };
+  }, [animalData, cardNum, setInfo]);
 
   const [active, setActive] = useState(false);
   const toggleHidden = () => {
     setActive(true);
   };
+  // useEffect(() => {
+  //   if (cardNum === 4) {
+  //     console.log("disableeee");
+  //   }
+  // });
   return (
     <div>
       <div className={`btnContainer start ${active ? `hidden` : ""}`}>
