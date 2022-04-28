@@ -15,7 +15,18 @@ function App() {
       <Start setInfo={setInfo} setCardList={setCardList} />
       <ul>
         {cardList.map((card, index) => {
-          return <li key={index}>{card ? card.name : "???"}</li>;
+          const handleClick = () => {
+            setInfo(card);
+          };
+          return (
+            <li key={index}>
+              {card ? (
+                <button onClick={handleClick}>{card.name}</button>
+              ) : (
+                "???"
+              )}
+            </li>
+          );
         })}
       </ul>
     </div>

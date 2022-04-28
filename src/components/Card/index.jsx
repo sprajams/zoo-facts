@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import "./style.scss";
 
-function Card(props) {
+function Result(props) {
   const { info } = props;
   const {
     name,
-    latinName,
-    url,
+    latin_name,
+    image_link,
     active_time,
     animal_type,
     weight_max,
@@ -59,10 +59,10 @@ function Card(props) {
               </h3>
             </div>
 
-            <h3 className="latinName">{latinName}</h3>
+            <h3 className="latinName">{latin_name}</h3>
           </div>
           <div className="animalContainer">
-            <img src={url} alt="animal" className="animalImg"></img>
+            <img src={image_link} alt="animal" className="animalImg"></img>
           </div>
 
           <div className="physicalInfo">
@@ -95,7 +95,7 @@ function Card(props) {
     </div>
   );
 }
-export default Card;
+export default Result;
 
 // https://zoo-animal-api.herokuapp.com
 //Animal lengths are in feet (ft.)
