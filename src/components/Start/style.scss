@@ -7,40 +7,35 @@
   line-height: 1em;
 }
 .btn {
-  display: block;
+  display: flex;
   margin: 0px auto;
-  background: orange;
   border-radius: 1em;
-  border: 5px solid rgba(255, 197, 116, 1);
+  border: 3px solid rgba(255, 197, 116, 1);
   padding: 10px;
-  width: 100%;
   font-family: "Expletus Sans", cursive;
+  font-weight: 500;
+}
+.btn--newCard {
+  width: 65px;
+  height: 80px;
+}
+.btn--newData {
+  background: orange;
   font-size: 1.1em;
-  font-weight: 600;
+  padding: 10px 20px;
+  width: 80%;
+  margin: 5px auto;
 }
 .btnContainer {
   width: 340px;
   margin: 0 auto 15px;
 }
-.btnAction {
-  display: flex;
-  justify-content: space-between;
+.smallCard-inner {
+  background-color: grey;
+  height: 30px;
+  width: 40px;
+  margin: 0 auto;
 }
-.btn--active {
-  background: white;
-  border: 5px solid rgba(255, 197, 116, 1);
-  flex-basis: 48%;
-}
-.btn--next {
-  margin-right: 0;
-}
-.btn--right {
-  margin-left: 0;
-}
-.hidden {
-  display: none;
-}
-
 .btn:hover {
   cursor: pointer;
   background: repeating-linear-gradient(
@@ -50,4 +45,12 @@
     rgba(224, 206, 190, 0.65) 30px,
     rgba(215, 191, 169, 0.65) 50px
   );
+}
+
+.newDeck {
+  padding: 0 30px;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
 }

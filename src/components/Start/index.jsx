@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { getCardBg } from "../../util";
 import "./style.scss";
 
 function Start(props) {
@@ -6,7 +7,7 @@ function Start(props) {
   const [animalData, getAnimalData] = useState([]);
 
   const fetchData = () => {
-    fetch("https://zoo-animal-api.herokuapp.com/animals/rand/5")
+    fetch("https://zoo-animal-api.herokuapp.com/animals/rand/6")
       .then((res) => res.json())
       .then((data) => {
         getAnimalData(data);
@@ -45,15 +46,21 @@ function Start(props) {
       {animalData.length ? (
         <>
           <div> New Cards:</div>
-          <ul>
+          <ul className="newDeck">
             {animalData.map((animal, index) => {
               const handleClick = () => {
                 setCardNum(index);
               };
+              const bgStyle = getCardBg(animal.animal_type);
+              console.log(bgStyle);
               return (
                 <li key={index}>
-                  <button onClick={handleClick}>
-                    {animal.name} {index}
+                  <button
+                    className={`btn bg-color btn--newCard`}
+                    style={bgStyle}
+                    onClick={handleClick}
+                  >
+                    <div className="smallCard-inner"></div>
                   </button>
                 </li>
               );
@@ -63,7 +70,9 @@ function Start(props) {
       ) : null}
 
       <div>
-        <button onClick={fetchData}>Get New Cards</button>
+        <button className="btn btn--newData" onClick={fetchData}>
+          Get New Cards
+        </button>
       </div>
     </div>
   );

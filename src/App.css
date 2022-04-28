@@ -1,3 +1,17 @@
 * {
   box-sizing: border-box;
 }
+
+@media (min-width: 768px) {
+  .activeDisplay {
+    display: flex;
+    justify-content: space-around;
+  }
+  .buttonContainer {
+    margin: 30px auto;
+  }
+  .collectionList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

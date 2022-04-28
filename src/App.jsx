@@ -11,24 +11,28 @@ function App() {
   return (
     <div>
       <h1 className="title">Zoo-nimals Facts</h1>
-      {info ? <Card info={info} /> : <Cover />}
-      <Start setInfo={setInfo} setCardList={setCardList} />
-      <ul>
-        {cardList.map((card, index) => {
-          const handleClick = () => {
-            setInfo(card);
-          };
-          return (
-            <li key={index}>
-              {card ? (
-                <button onClick={handleClick}>{card.name}</button>
-              ) : (
-                "???"
-              )}
-            </li>
-          );
-        })}
-      </ul>
+      <main className="activeDisplay">
+        <div>{info ? <Card info={info} /> : <Cover />}</div>
+        <section className="buttonContainer">
+          <Start setInfo={setInfo} setCardList={setCardList} />
+          <ul className="collectionList">
+            {cardList.map((card, index) => {
+              const handleClick = () => {
+                setInfo(card);
+              };
+              return (
+                <li key={index}>
+                  {card ? (
+                    <button onClick={handleClick}>{card.name}</button>
+                  ) : (
+                    "???"
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      </main>
     </div>
   );
 }
