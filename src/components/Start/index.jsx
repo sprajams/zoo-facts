@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./style.scss";
 
 function Start(props) {
-  const { setInfo } = props;
+  const { setInfo, setCardList } = props;
   const [animalData, getAnimalData] = useState([]);
 
   const fetchData = () => {
@@ -12,17 +12,34 @@ function Start(props) {
         getAnimalData(data);
       });
   };
-  // get and store 5 animals data into useState, animal data once
+
   useEffect(() => {
-    fetchData();
-  }, []);
+    // adding new cards to collection
+    setCardList((curr) => {
+      const newList = [...curr];
+      for (let i = 0; i < animalData.length; i++) {
+        const cardId = animalData[i].id;
+        newList[cardId] = animalData[i];
+      }
+      // replace empty elements with undefined
+      for (var i = 0; i < newList.length; i++) {
+        if (newList[i] === undefined) {
+          newList[i] = undefined;
+        }
+      }
+      return [...newList];
+    });
+  }, [animalData, setCardList]);
+  // get and store 5 animals data into useState, animal data once
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
 
   // const start = () => {
   //   toggleHidden();
   //   setCardNum(0);
   //   console.log("started");
   // };
-
   const [cardNum, setCardNum] = useState(NaN);
 
   // const nextScreen = () => {
@@ -76,11 +93,12 @@ function Start(props) {
           setCardNum(index);
         };
         return (
-          <button onClick={handleClick}>
+          <button key={index} onClick={handleClick}>
             {animal.name} {index}
           </button>
         );
       })}
+      <button onClick={fetchData}>new card</button>
       {/* {!active && (
         <div className={`btnContainer start`}>
           <button className="btn btn-random" onClick={start}>
