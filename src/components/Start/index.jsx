@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getCardBg } from "../../util";
+import CardMini from "../CardMini";
 import "./style.scss";
 
 function Start(props) {
@@ -45,22 +45,15 @@ function Start(props) {
     <div>
       {animalData.length ? (
         <>
-          <div> New Cards:</div>
+          <div className="newCardTitle"> New Cards:</div>
           <ul className="newDeck">
             {animalData.map((animal, index) => {
               const handleClick = () => {
                 setCardNum(index);
               };
-              const bgStyle = getCardBg(animal.animal_type);
               return (
                 <li key={index}>
-                  <button
-                    className={`btn bg-color btn--newCard`}
-                    style={bgStyle}
-                    onClick={handleClick}
-                  >
-                    <div className="smallCard-inner"></div>
-                  </button>
+                  <CardMini handleClick={handleClick} animal={animal} />
                 </li>
               );
             })}

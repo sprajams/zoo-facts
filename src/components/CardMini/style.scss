@@ -1,0 +1,17 @@
+.cardMini {
+  width: 65px;
+  height: 80px;
+  border: 3px solid rgba(255, 197, 116, 1);
+  border-radius: 1em;
+  display: flex;
+  padding: 10px;
+  cursor: pointer;
+  background-size: 150% 150%;
+  background-position: center;
+}
+.cardMini__inner {
+  background-color: grey;
+  height: 30px;
+  width: 40px;
+  margin: 0 auto;
+}

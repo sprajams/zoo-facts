@@ -3,7 +3,7 @@ export function getCardBg(animal_type) {
   switch (animal_type) {
     case "Bird":
       bgStyle = {
-        background: `radial-gradient(
+        backgroundImage: `radial-gradient(
         circle,
         rgba(255, 253, 229, 1) 0%,
         rgb(240, 239, 219) 45%,
@@ -14,7 +14,7 @@ export function getCardBg(animal_type) {
       break;
     case "Mammal":
       bgStyle = {
-        background: `radial-gradient(
+        backgroundImage: `radial-gradient(
         circle,
         rgba(186, 162, 162, 1) 0%,
         rgb(217, 191, 191) 50%,
@@ -25,7 +25,7 @@ export function getCardBg(animal_type) {
       break;
     case "Reptile":
       bgStyle = {
-        background: `radial-gradient(
+        backgroundImage: `radial-gradient(
         circle,
         rgb(187, 185, 185) 0%,
         rgb(131, 129, 129) 50%,
@@ -36,7 +36,7 @@ export function getCardBg(animal_type) {
       break;
     case "Fish":
       bgStyle = {
-        background: `radial-gradient(
+        backgroundImage: `radial-gradient(
         circle,
         rgb(210, 228, 244) 0%,
         rgb(201, 215, 230) 50%,
@@ -47,7 +47,7 @@ export function getCardBg(animal_type) {
       break;
     case "Amphibian":
       bgStyle = {
-        background: `radial-gradient(
+        backgroundImage: `radial-gradient(
         circle,
         rgba(39, 154, 85, 1) 0%,
         rgba(89, 155, 115, 1) 15%,
@@ -58,7 +58,7 @@ export function getCardBg(animal_type) {
       break;
     default:
       bgStyle = {
-        background: `radial-gradient(
+        backgroundImage: `radial-gradient(
         circle,
         rgb(187, 143, 143) 0%,
         rgb(223, 184, 184) 50%,
