@@ -18,12 +18,12 @@ function Start(props) {
     // adding new cards to collection
     setCardList((curr) => {
       const newList = [...curr];
-      for (let i = 0; i < animalData.length; i++) {
+      for (let i = 1; i < animalData.length; i++) {
         const cardId = animalData[i].id;
-        newList[cardId] = animalData[i];
+        newList[cardId - 1] = animalData[i];
       }
       // replace empty elements with undefined
-      for (var i = 0; i < newList.length; i++) {
+      for (let i = 0; i < newList.length; i++) {
         if (newList[i] === undefined) {
           newList[i] = undefined;
         }
@@ -52,7 +52,6 @@ function Start(props) {
                 setCardNum(index);
               };
               const bgStyle = getCardBg(animal.animal_type);
-              console.log(bgStyle);
               return (
                 <li key={index}>
                   <button

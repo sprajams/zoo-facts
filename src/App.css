@@ -9,9 +9,14 @@
   }
   .buttonContainer {
     margin: 30px auto;
+    flex: 60%;
   }
   .collectionList {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    padding: 0 20px;
+  }
+  .collectionList > li {
+    font-size: 0.8em;
   }
 }

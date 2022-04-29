@@ -89,7 +89,7 @@ function Result(props) {
             </h4>
           </div>
 
-          <span className="cardNum">{id} / 200</span>
+          <span className="cardNum">{id} / 197</span>
         </div>
       </section>
     </div>

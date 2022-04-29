@@ -8,6 +8,7 @@ import Cover from "./components/Cover";
 function App() {
   const [info, setInfo] = useState(null);
   const [cardList, setCardList] = useState([]);
+  console.log(cardList);
   return (
     <div>
       <h1 className="title">Zoo-nimals Facts</h1>
