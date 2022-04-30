@@ -7,7 +7,7 @@ function Start(props) {
   const [animalData, getAnimalData] = useState([]);
 
   const fetchData = () => {
-    fetch("https://zoo-animal-api.herokuapp.com/animals/rand/6")
+    fetch("https://zoo-animal-api.herokuapp.com/animals/rand/5")
       .then((res) => res.json())
       .then((data) => {
         getAnimalData(data);

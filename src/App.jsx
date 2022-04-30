@@ -4,6 +4,7 @@ import { useState } from "react";
 import Start from "./components/Start";
 import Card from "./components/Card";
 import Cover from "./components/Cover";
+import CardMini from "./components/CardMini";
 
 function App() {
   const [info, setInfo] = useState(null);
@@ -13,9 +14,14 @@ function App() {
     <div>
       <h1 className="title">Zoo-nimals Facts</h1>
       <main className="activeDisplay">
-        <div>{info ? <Card info={info} /> : <Cover />}</div>
+        <div className="cardMain">
+          {info ? <Card info={info} /> : <Cover />}
+        </div>
         <section className="buttonContainer">
-          <Start setInfo={setInfo} setCardList={setCardList} />
+          <div className="newPack">
+            <Start setInfo={setInfo} setCardList={setCardList} />
+          </div>
+          <div>Card Collection:</div>
           <ul className="collectionList">
             {cardList.map((card, index) => {
               const handleClick = () => {
@@ -24,9 +30,10 @@ function App() {
               return (
                 <li key={index}>
                   {card ? (
-                    <button onClick={handleClick}>{card.name}</button>
+                    // <button onClick={handleClick}>{card.name}</button>
+                    <CardMini handleClick={handleClick} animal={card} />
                   ) : (
-                    "???"
+                    <div className="cardMini__unknown">???</div>
                   )}
                 </li>
               );

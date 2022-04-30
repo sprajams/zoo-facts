@@ -8,15 +8,41 @@
     justify-content: space-around;
   }
   .buttonContainer {
-    margin: 30px auto;
-    flex: 60%;
+    padding: 30px;
+    flex-basis: 55%;
+    border: 2px solid green;
+  }
+  .cardMain {
+    flex-basis: 45%;
+    border: 2px solid red;
   }
   .collectionList {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(8, 1fr);
     padding: 0 20px;
+    list-style: none;
+    justify-items: center;
+    align-items: center;
+    grid-gap: 10px 0px;
   }
   .collectionList > li {
     font-size: 0.8em;
   }
+  .newPack {
+    padding: 20px 0;
+    border-bottom: 2px dashed blue;
+  }
+}
+.cardMini__unknown {
+  width: 65px;
+  height: 80px;
+  border: 3px dashed rgba(255, 197, 116, 1);
+  border-radius: 1em;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  /* align-items: center; */
+  background: rgba(214, 214, 214, 0.5);
+  font-weight: 500;
+  font-size: 1.1em;
 }
