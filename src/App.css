@@ -1,36 +1,41 @@
 * {
   box-sizing: border-box;
 }
-
+.collectionTitle {
+  padding: 5px 20px 0;
+  font-weight: 500;
+}
+.collectionList {
+}
 @media (min-width: 768px) {
   .activeDisplay {
     display: flex;
     justify-content: space-around;
   }
   .buttonContainer {
-    padding: 30px;
-    flex-basis: 55%;
-    border: 2px solid green;
+    padding: 10px 0px;
+    flex-basis: 45%;
+    border: 1px solid green;
   }
   .cardMain {
     flex-basis: 45%;
-    border: 2px solid red;
   }
   .collectionList {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    padding: 0 20px;
     list-style: none;
+    padding: 0 5px;
     justify-items: center;
     align-items: center;
     grid-gap: 10px 0px;
+    grid-template-columns: repeat(5, 1fr);
   }
   .collectionList > li {
     font-size: 0.8em;
   }
   .newPack {
     padding: 20px 0;
-    border-bottom: 2px dashed blue;
+    border-bottom: 3px dashed blue;
+    margin-bottom: 10px;
   }
 }
 .cardMini__unknown {
