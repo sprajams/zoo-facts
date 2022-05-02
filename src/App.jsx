@@ -13,15 +13,17 @@ function App() {
   return (
     <div>
       <h1 className="title">Zoo-nimals Facts</h1>
+
       <main className="activeDisplay">
         <div className="cardMain">
           {info ? <Card info={info} /> : <Cover />}
         </div>
+
         <section className="buttonContainer">
           <div className="newPack">
             <Start setInfo={setInfo} setCardList={setCardList} />
           </div>
-          <div>Card Collection:</div>
+          <div className="collectionTitle">Card Collection:</div>
           <ul className="collectionList">
             {cardList.map((card, index) => {
               const handleClick = () => {
