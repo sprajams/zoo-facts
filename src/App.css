@@ -6,38 +6,50 @@
   font-weight: 500;
 }
 .collectionList {
+  display: grid;
+  list-style: none;
+  justify-items: center;
+  align-items: center;
+  grid-gap: 5px;
+  padding: 5px;
+  grid-template-columns: repeat(5, 1fr);
 }
+.cardMain {
+  border: 1px solid green;
+}
+.newPack {
+  border: 1px solid blue;
+}
+.collectionContainer {
+  border: 1px solid red;
+}
+
 @media (min-width: 768px) {
   .activeDisplay {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
-  .buttonContainer {
-    padding: 10px 0px;
-    flex-basis: 45%;
-    border: 1px solid green;
+  .collectionContainer {
+    grid-column-start: 1;
+    grid-column-end: 3;
   }
   .cardMain {
     flex-basis: 45%;
   }
   .collectionList {
-    display: grid;
-    list-style: none;
     padding: 0 5px;
-    justify-items: center;
-    align-items: center;
-    grid-gap: 10px 0px;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(8, 1fr);
+    padding: 10px;
+    grid-gap: 15px 0px;
+    width: 60%;
+    min-width: 650px;
+    margin: 0 auto;
   }
   .collectionList > li {
     font-size: 0.8em;
   }
-  .newPack {
-    padding: 20px 0;
-    border-bottom: 3px dashed blue;
-    margin-bottom: 10px;
-  }
 }
+
 .cardMini__unknown {
   width: 65px;
   height: 80px;

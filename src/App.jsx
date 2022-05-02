@@ -15,14 +15,16 @@ function App() {
       <h1 className="title">Zoo-nimals Facts</h1>
 
       <main className="activeDisplay">
-        <div className="cardMain">
+        <section className="cardMain">
           {info ? <Card info={info} /> : <Cover />}
-        </div>
+        </section>
 
-        <section className="buttonContainer">
-          <div className="newPack">
-            <Start setInfo={setInfo} setCardList={setCardList} />
-          </div>
+        {/* <section className="buttonContainer"> */}
+        <section className="newPack">
+          <Start setInfo={setInfo} setCardList={setCardList} />
+        </section>
+
+        <section className="collectionContainer">
           <div className="collectionTitle">Card Collection:</div>
           <ul className="collectionList">
             {cardList.map((card, index) => {
@@ -42,6 +44,7 @@ function App() {
             })}
           </ul>
         </section>
+        {/* </section> */}
       </main>
     </div>
   );
