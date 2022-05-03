@@ -1,9 +1,15 @@
 * {
   box-sizing: border-box;
 }
-.collectionTitle {
-  padding: 5px 20px 0;
+.collectionAccordian {
+  padding: 25px;
+  padding-bottom: 16px;
+  text-align: left;
   font-weight: 500;
+  width: 100%;
+  font-family: "Raleway", cursive;
+  font-size: 1em;
+  cursor: pointer;
 }
 .collectionList {
   display: grid;
@@ -13,6 +19,7 @@
   grid-gap: 5px;
   padding: 5px;
   grid-template-columns: repeat(5, 1fr);
+  border: 1px solid brown;
 }
 .cardMain {
   border: 1px solid green;
@@ -27,12 +34,9 @@
 @media (min-width: 768px) {
   .activeDisplay {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.5fr;
   }
-  .collectionContainer {
-    grid-column-start: 1;
-    grid-column-end: 3;
-  }
+
   .cardMain {
     flex-basis: 45%;
   }
@@ -44,6 +48,7 @@
     width: 60%;
     min-width: 650px;
     margin: 0 auto;
+    overflow: hidden;
   }
   .collectionList > li {
     font-size: 0.8em;

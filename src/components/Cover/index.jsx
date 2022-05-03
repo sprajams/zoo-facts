@@ -2,7 +2,7 @@ import "./style.scss";
 
 function Cover() {
   return (
-    <div className="outer cover">
+    <div className="coverOuter cover">
       <h2 className="logo logo--big">Z</h2>
     </div>
   );

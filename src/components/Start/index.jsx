@@ -52,7 +52,7 @@ function Start(props) {
                 setCardNum(index);
               };
               return (
-                <li key={index}>
+                <li className="newDeck__miniCard" key={index}>
                   <CardMini handleClick={handleClick} animal={animal} />
                 </li>
               );

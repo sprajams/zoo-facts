@@ -9,6 +9,7 @@ import CardMini from "./components/CardMini";
 function App() {
   const [info, setInfo] = useState(null);
   const [cardList, setCardList] = useState([]);
+  const [accordianActive, setAccordianActive] = useState(false);
   console.log(cardList);
   return (
     <div>
@@ -20,30 +21,39 @@ function App() {
         </section>
 
         {/* <section className="buttonContainer"> */}
-        <section className="newPack">
-          <Start setInfo={setInfo} setCardList={setCardList} />
-        </section>
+        <div>
+          <section className="newPack">
+            <Start setInfo={setInfo} setCardList={setCardList} />
+          </section>
 
-        <section className="collectionContainer">
-          <div className="collectionTitle">Card Collection:</div>
-          <ul className="collectionList">
-            {cardList.map((card, index) => {
-              const handleClick = () => {
-                setInfo(card);
-              };
-              return (
-                <li key={index}>
-                  {card ? (
-                    // <button onClick={handleClick}>{card.name}</button>
-                    <CardMini handleClick={handleClick} animal={card} />
-                  ) : (
-                    <div className="cardMini__unknown">???</div>
-                  )}
-                </li>
-              );
-            })}
-          </ul>
-        </section>
+          <section className="collectionContainer">
+            <button
+              className="collectionAccordian"
+              onClick={() => setAccordianActive(!accordianActive)}
+            >
+              My Card Collection:
+            </button>
+            {accordianActive ? (
+              <ul className="collectionList">
+                {cardList.map((card, index) => {
+                  const handleClick = () => {
+                    setInfo(card);
+                  };
+                  return (
+                    <li key={index}>
+                      {card ? (
+                        // <button onClick={handleClick}>{card.name}</button>
+                        <CardMini handleClick={handleClick} animal={card} />
+                      ) : (
+                        <div className="cardMini__unknown">???</div>
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
+            ) : null}
+          </section>
+        </div>
         {/* </section> */}
       </main>
     </div>
