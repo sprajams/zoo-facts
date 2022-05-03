@@ -12,7 +12,7 @@ function App() {
   const [accordianActive, setAccordianActive] = useState(false);
   console.log(cardList);
   return (
-    <div>
+    <div className="outterMain">
       <h1 className="title">Zoo-nimals Facts</h1>
 
       <main className="activeDisplay">
@@ -20,8 +20,7 @@ function App() {
           {info ? <Card info={info} /> : <Cover />}
         </section>
 
-        {/* <section className="buttonContainer"> */}
-        <div>
+        <div className="newCard__Collection">
           <section className="newPack">
             <Start setInfo={setInfo} setCardList={setCardList} />
           </section>
@@ -54,7 +53,6 @@ function App() {
             ) : null}
           </section>
         </div>
-        {/* </section> */}
       </main>
     </div>
   );

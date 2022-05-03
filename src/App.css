@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
 }
+
 .collectionAccordian {
   padding: 25px;
   padding-bottom: 16px;
@@ -10,45 +11,44 @@
   font-family: "Raleway", cursive;
   font-size: 1em;
   cursor: pointer;
+  border: none;
 }
 .collectionList {
+  margin: 0 auto;
   display: grid;
   list-style: none;
   justify-items: center;
   align-items: center;
   grid-gap: 5px;
-  padding: 5px;
+  padding: 5px 15px;
   grid-template-columns: repeat(5, 1fr);
-  border: 1px solid brown;
-}
-.cardMain {
-  border: 1px solid green;
-}
-.newPack {
-  border: 1px solid blue;
 }
 .collectionContainer {
-  border: 1px solid red;
+  min-width: 360px;
+  margin: 0 auto;
 }
 
 @media (min-width: 768px) {
   .activeDisplay {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    display: flex;
+    justify-content: space-evenly;
+    /* align-items: center; */
   }
 
   .cardMain {
-    flex-basis: 45%;
+    flex-basis: 40%;
+  }
+  .newCard__Collection {
+    flex-basis: 50%;
   }
   .collectionList {
     padding: 0 5px;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
     padding: 10px;
     grid-gap: 15px 0px;
-    width: 60%;
-    min-width: 650px;
     margin: 0 auto;
-    overflow: hidden;
+    height: 390px;
+    overflow-y: scroll;
   }
   .collectionList > li {
     font-size: 0.8em;
@@ -63,7 +63,6 @@
   display: flex;
   justify-content: center;
   padding: 20px;
-  /* align-items: center; */
   background: rgba(214, 214, 214, 0.5);
   font-weight: 500;
   font-size: 1.1em;
