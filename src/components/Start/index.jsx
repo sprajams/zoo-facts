@@ -45,7 +45,6 @@ function Start(props) {
     <div>
       {animalData.length ? (
         <>
-          <div className="newCardTitle"> New Cards:</div>
           <ul className="newDeck">
             {animalData.map((animal, index) => {
               const handleClick = () => {

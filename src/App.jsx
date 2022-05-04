@@ -1,16 +1,15 @@
 import "./App.css";
 import "./components/Card";
 import { useState } from "react";
-import Start from "./components/Start";
 import Card from "./components/Card";
 import Cover from "./components/Cover";
-import CardMini from "./components/CardMini";
+
+import AccordionGroup from "./components/AccordionGroup";
 
 function App() {
   const [info, setInfo] = useState(null);
   const [cardList, setCardList] = useState([]);
-  const [accordianActive, setAccordianActive] = useState(false);
-  console.log(cardList);
+
   return (
     <div className="outterMain">
       <h1 className="title">Zoo-nimals Facts</h1>
@@ -21,36 +20,12 @@ function App() {
         </section>
 
         <div className="newCard__Collection">
-          <section className="newPack">
-            <Start setInfo={setInfo} setCardList={setCardList} />
-          </section>
-
           <section className="collectionContainer">
-            <button
-              className="collectionAccordian"
-              onClick={() => setAccordianActive(!accordianActive)}
-            >
-              My Card Collection:
-            </button>
-            {accordianActive ? (
-              <ul className="collectionList">
-                {cardList.map((card, index) => {
-                  const handleClick = () => {
-                    setInfo(card);
-                  };
-                  return (
-                    <li key={index}>
-                      {card ? (
-                        // <button onClick={handleClick}>{card.name}</button>
-                        <CardMini handleClick={handleClick} animal={card} />
-                      ) : (
-                        <div className="cardMini__unknown">???</div>
-                      )}
-                    </li>
-                  );
-                })}
-              </ul>
-            ) : null}
+            <AccordionGroup
+              cardList={cardList}
+              setInfo={setInfo}
+              setCardList={setCardList}
+            />
           </section>
         </div>
       </main>
