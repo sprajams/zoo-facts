@@ -11,24 +11,19 @@ function App() {
   const [cardList, setCardList] = useState([]);
 
   return (
-    <div className="outterMain">
-      <h1 className="title">Zoo-nimals Facts</h1>
+    <div className="activeDisplay">
+      <section className="cardMain">
+        <h1 className="title">Zoonimals</h1>
+        {info ? <Card info={info} /> : <Cover />}
+      </section>
 
-      <main className="activeDisplay">
-        <section className="cardMain">
-          {info ? <Card info={info} /> : <Cover />}
-        </section>
-
-        <div className="newCard__Collection">
-          <section className="collectionContainer">
-            <AccordionGroup
-              cardList={cardList}
-              setInfo={setInfo}
-              setCardList={setCardList}
-            />
-          </section>
-        </div>
-      </main>
+      <section className="collectionContainer">
+        <AccordionGroup
+          cardList={cardList}
+          setInfo={setInfo}
+          setCardList={setCardList}
+        />
+      </section>
     </div>
   );
 }

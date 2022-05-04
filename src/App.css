@@ -2,6 +2,14 @@
   box-sizing: border-box;
 }
 
+.title {
+  font-family: "Expletus Sans", cursive;
+  font-weight: 700;
+  font-size: 2.7em;
+  margin: 10px auto;
+  line-height: 1em;
+  text-transform: uppercase;
+}
 .collectionContainer {
   min-width: 360px;
   margin: 0 auto;
@@ -10,14 +18,12 @@
 @media (min-width: 768px) {
   .activeDisplay {
     display: flex;
-    justify-content: space-evenly;
-    /* align-items: center; */
   }
   .cardMain {
     flex-basis: 40%;
   }
-  .newCard__Collection {
-    flex-basis: 50%;
+  .collectionContainer {
+    flex-basis: 40%;
   }
 }
 

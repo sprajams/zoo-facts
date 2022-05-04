@@ -1,4 +1,4 @@
-.collectionAccordian {
+.accordion__button {
   padding: 25px;
   padding-bottom: 16px;
   text-align: left;
@@ -8,4 +8,13 @@
   font-size: 1em;
   cursor: pointer;
   border: none;
+}
+
+.accordion__detail {
+  max-height: 475px;
+  overflow-y: scroll;
+}
+.accordion {
+  display: flex;
+  flex-direction: column;
 }

@@ -38,7 +38,7 @@ function AccordionGroup(props) {
   ];
 
   return (
-    <div>
+    <div className="accordionGroup">
       {accordionData.map((data, index) => {
         const { title, detail } = data;
         const handleClick = () => {
