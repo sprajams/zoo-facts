@@ -2,11 +2,11 @@ import { useState } from "react";
 import Accordion from "../Accordion";
 import Start from "../Start";
 import CardMini from "../CardMini";
-
+import ToggleDark from "../ToggleDark";
 import "./style.scss";
 
 function AccordionGroup(props) {
-  const { cardList, setInfo, setCardList } = props;
+  const { cardList, setInfo, setCardList, handleClick } = props;
   const [activeIndex, setActiveIndex] = useState(0);
 
   const accordionData = [
@@ -42,7 +42,7 @@ function AccordionGroup(props) {
         </ul>
       ),
     },
-    { title: "Settings", detail: "dark mode" },
+    { title: "Settings", detail: <ToggleDark handleClick={handleClick} /> },
   ];
 
   console.log(cardList);

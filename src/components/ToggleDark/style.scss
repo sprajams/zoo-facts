@@ -1,0 +1,14 @@
+.toggle {
+  display: flex;
+  border-radius: 8px;
+  padding: 5px;
+  border: 2px solid red;
+  position: absolute;
+}
+.mode {
+  display: block;
+  width: 60px;
+  padding: 5px 0;
+  text-align: center;
+  cursor: pointer;
+}
