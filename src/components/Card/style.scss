@@ -12,7 +12,7 @@ h3 {
   height: 500px;
   display: flex;
   flex-direction: column;
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     width: 400px;
     height: 535px;
   }
@@ -24,7 +24,7 @@ h3 {
   margin: 0 20px;
   padding: 5px 0;
   border-top: 2px solid rgba(255, 149, 0, 0.75);
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     font-size: 0.8em;
   }
 }
@@ -37,7 +37,7 @@ h3 {
   font-style: italic;
   font-weight: 700;
   flex: 1 1 auto;
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     font-size: 1em;
   }
 }
@@ -71,7 +71,7 @@ h3 {
   margin: 0 auto;
   border: 6px solid rgb(194, 152, 111);
   box-shadow: 4px 5px 8px rgb(105, 105, 105);
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     width: 325px;
     height: 220px;
   }
@@ -168,7 +168,7 @@ h3 {
   margin: 7px auto 0;
   padding: 0.5em 7px;
   white-space: nowrap;
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     width: 85%;
     font-size: 0.8em;
   }
@@ -186,7 +186,7 @@ h3 {
   border-bottom: 2px solid rgb(255, 149, 0);
   font-size: 0.85em;
   line-height: 1.25em;
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     font-size: 0.9em;
   }
 }

@@ -6,6 +6,7 @@ function Start(props) {
   const { setInfo, setCardList } = props;
   const [animalData, getAnimalData] = useState([]);
 
+  //get 5 random animal info
   const fetchData = () => {
     fetch("https://zoo-animal-api.herokuapp.com/animals/rand/5")
       .then((res) => res.json())
@@ -41,6 +42,7 @@ function Start(props) {
     }
   }, [animalData, cardNum, setInfo]);
 
+  //buttons for each of the 5 random animals fetched from the API
   return (
     <div>
       {animalData.length ? (
@@ -59,7 +61,6 @@ function Start(props) {
           </ul>
         </>
       ) : null}
-
       <div>
         <button className="btn btn--newData" onClick={fetchData}>
           {animalData.length ? "Anotha One" : "New Pack"}

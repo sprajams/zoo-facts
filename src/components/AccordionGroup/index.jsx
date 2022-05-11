@@ -2,6 +2,7 @@ import { useState } from "react";
 import Accordion from "../Accordion";
 import Start from "../Start";
 import CardMini from "../CardMini";
+
 import "./style.scss";
 
 function AccordionGroup(props) {
@@ -17,26 +18,34 @@ function AccordionGroup(props) {
       title: "Collection",
       detail: (
         <ul className="collectionList">
-          {cardList.map((card, index) => {
-            const handleClick = () => {
-              setInfo(card);
-            };
-            return (
-              <li key={index}>
-                {card ? (
-                  <CardMini handleClick={handleClick} animal={card} />
-                ) : (
-                  <div className="cardMini__unknown"></div>
-                )}
-              </li>
-            );
-          })}
+          {cardList.length > 0 ? (
+            cardList.map((card, index) => {
+              const handleClick = () => {
+                setInfo(card);
+              };
+              return (
+                <li key={index}>
+                  {card ? (
+                    <CardMini handleClick={handleClick} animal={card} />
+                  ) : (
+                    <div className="cardMini__unknown"></div>
+                  )}
+                </li>
+              );
+            })
+          ) : (
+            <div className="collectionList--empty">
+              Oops, looks like this is empty 🥺 <br /> Please visit the Shop to
+              get started!
+            </div>
+          )}
         </ul>
       ),
     },
     { title: "Settings", detail: "dark mode" },
   ];
 
+  console.log(cardList);
   return (
     <div className="accordionGroup">
       {accordionData.map((data, index) => {
