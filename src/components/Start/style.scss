@@ -1,25 +1,21 @@
 .btn {
   display: flex;
   margin: 0px auto;
-  border-radius: 1em;
-  border: 3px solid rgba(255, 197, 116, 1);
+  border-radius: 8px;
+  border: none;
   padding: 10px;
-  font-family: "Expletus Sans", cursive;
-  font-weight: 500;
+  font-family: "Teko", sans-serif;
+  font-weight: 400;
   justify-content: center;
 }
 
 .btn--newData {
-  background: orange;
-  font-size: 1.1em;
-  padding: 10px 20px;
-  min-width: 360px;
-  width: 80%;
-  max-width: 400px;
-  margin: 0 auto 20px;
-  @media (min-width: 768px) {
-    margin: 0 auto 25px;
-  }
+  background: rgba(255, 116, 38, 1);
+  font-size: 1.6em;
+  color: white;
+  margin: 0 auto;
+  width: 125px;
+  box-shadow: 0px 8px 0px #d15711;
 }
 .btnContainer {
   width: 340px;
@@ -45,8 +41,16 @@
   }
 }
 .newDeck {
-  padding: 0 10px;
+  margin: -8px 0px 0px -8px;
+  padding: 0;
+  padding-top: 20px;
+  padding-bottom: 28px;
   list-style: none;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.newDeck__miniCard {
+  padding: 8px 0px 0px 8px;
 }

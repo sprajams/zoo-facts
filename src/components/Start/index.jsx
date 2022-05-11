@@ -62,7 +62,7 @@ function Start(props) {
 
       <div>
         <button className="btn btn--newData" onClick={fetchData}>
-          Get New Cards
+          {animalData.length ? "Anotha One" : "New Pack"}
         </button>
       </div>
     </div>

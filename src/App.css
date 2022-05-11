@@ -12,8 +12,14 @@
 }
 .collectionContainer {
   min-width: 360px;
-  margin: 0 auto;
+  margin: 10px auto;
 }
+@media (min-width: 767px) {
+  .collectionContainer {
+    margin: 0px auto;
+  }
+}
+
 .activeDisplay {
   padding: 10px 5px;
 }
