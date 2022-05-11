@@ -14,10 +14,14 @@
   min-width: 360px;
   margin: 0 auto;
 }
-
+.activeDisplay {
+  padding: 10px 5px;
+}
 @media (min-width: 768px) {
   .activeDisplay {
     display: flex;
+    align-items: center;
+    padding: 10px;
   }
   .cardMain {
     flex-basis: 40%;

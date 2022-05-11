@@ -10,11 +10,11 @@ function AccordionGroup(props) {
 
   const accordionData = [
     {
-      title: "New Cards",
+      title: "Shop",
       detail: <Start setInfo={setInfo} setCardList={setCardList} />,
     },
     {
-      title: "My Card Collection:",
+      title: "Collection",
       detail: (
         <ul className="collectionList">
           {cardList.map((card, index) => {
@@ -34,7 +34,7 @@ function AccordionGroup(props) {
         </ul>
       ),
     },
-    { title: "Setting", detail: "dark mode" },
+    { title: "Settings", detail: "dark mode" },
   ];
 
   return (
