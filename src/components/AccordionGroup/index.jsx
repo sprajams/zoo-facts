@@ -26,7 +26,7 @@ function AccordionGroup(props) {
                 {card ? (
                   <CardMini handleClick={handleClick} animal={card} />
                 ) : (
-                  <div className="cardMini__unknown">???</div>
+                  <div className="cardMini__unknown"></div>
                 )}
               </li>
             );

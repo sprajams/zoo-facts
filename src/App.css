@@ -4,48 +4,41 @@
 
 .title {
   font-family: "Expletus Sans", cursive;
+  text-align: center;
   font-weight: 700;
   font-size: 2.7em;
-  margin: 10px auto;
+  margin: 0 auto;
   line-height: 1em;
   text-transform: uppercase;
 }
 .collectionContainer {
-  min-width: 360px;
+  min-width: 325px;
   margin: 10px auto;
+  padding-top: 16px;
 }
+
 @media (min-width: 767px) {
   .collectionContainer {
     margin: 0px auto;
   }
 }
-
 .activeDisplay {
-  padding: 10px 5px;
+  padding: 10px 24px;
 }
 @media (min-width: 768px) {
   .activeDisplay {
     display: flex;
-    align-items: center;
     padding: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
   }
   .cardMain {
     flex-basis: 40%;
   }
   .collectionContainer {
-    flex-basis: 40%;
+    width: 400px;
   }
-}
-
-.cardMini__unknown {
-  width: 65px;
-  height: 80px;
-  border: 3px dashed rgba(255, 197, 116, 1);
-  border-radius: 1em;
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-  background: rgba(214, 214, 214, 0.5);
-  font-weight: 500;
-  font-size: 1.1em;
 }

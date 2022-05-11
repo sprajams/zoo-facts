@@ -4,22 +4,36 @@
   list-style: none;
   justify-items: center;
   align-items: center;
-  grid-gap: 5px;
-  padding: 5px 15px;
+  grid-gap: 8px;
   grid-template-columns: repeat(5, 1fr);
+  padding: 0;
+  overflow-y: scroll;
+  height: 275px;
+  padding: 0 5px;
   @media (min-width: 768px) {
-    padding: 0 5px;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-    padding: 10px;
-    grid-gap: 15px 0px;
-    margin: 0 auto;
-    .collectionList > li {
-      font-size: 0.8em;
-    }
+    grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
+    grid-gap: 18px 0px;
   }
 }
 .accordionGroup {
-  height: 100%;
   display: flex;
+  height: 100%;
   flex-direction: column;
+}
+.cardMini__unknown {
+  width: 40px;
+  height: 50px;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(214, 214, 214, 0.5);
+  font-weight: 500;
+  font-size: 0.34em;
+  border: 2px dashed rgb(237, 200, 140);
+  @media (min-width: 768px) {
+    width: 48px;
+    height: 60px;
+  }
 }
