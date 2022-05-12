@@ -1,0 +1,40 @@
+.btn {
+  border: none;
+  font-family: "Teko", sans-serif;
+  font-weight: 400;
+  cursor: pointer;
+  font-size: 1.6em;
+  color: white;
+  width: 106px;
+  height: 54px;
+  border-radius: 8px;
+  position: relative;
+  text-align: center;
+}
+.btnTop,
+.btnBottom {
+  height: 48px;
+  width: 100%;
+  position: absolute;
+  border-radius: 8px;
+  left: 0;
+}
+.btnTop {
+  background: rgba(255, 116, 38, 1);
+  top: 0px;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: top 0.1s ease-in;
+}
+.btnBottom {
+  background: #d15711;
+  bottom: 0px;
+}
+.btn:hover .btnTop {
+  top: 3px;
+}
+.btn:active .btnTop {
+  top: 6px;
+}

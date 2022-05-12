@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import CardMini from "../CardMini";
+import Button from "../Button";
 import "./style.scss";
 
-function Start(props) {
+function Shop(props) {
   const { setInfo, setCardList } = props;
   const [animalData, getAnimalData] = useState([]);
 
@@ -62,12 +63,13 @@ function Start(props) {
         </>
       ) : null}
       <div>
-        <button className="btn btn--newData" onClick={fetchData}>
-          {animalData.length ? "Anotha One" : "New Pack"}
-        </button>
+        <Button
+          onClick={fetchData}
+          label={animalData.length ? "Anotha One" : "New Pack"}
+        />
       </div>
     </div>
   );
 }
 
-export default Start;
+export default Shop;

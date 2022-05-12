@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Accordion from "../Accordion";
-import Start from "../Start";
+import Shop from "../Shop";
 import CardMini from "../CardMini";
 import ToggleDark from "../ToggleDark";
 import "./style.scss";
@@ -12,7 +12,7 @@ function AccordionGroup(props) {
   const accordionData = [
     {
       title: "Shop",
-      detail: <Start setInfo={setInfo} setCardList={setCardList} />,
+      detail: <Shop setInfo={setInfo} setCardList={setCardList} />,
     },
     {
       title: "Collection",
