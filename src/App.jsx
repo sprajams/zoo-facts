@@ -14,24 +14,26 @@ function App() {
   };
 
   return (
-    <div
-      className={
-        isDarkMode ? "activeDisplay--dark activeDisplay " : "activeDisplay"
-      }
-    >
-      <section className="cardMain">
-        <h1 className="title">Zoonimals</h1>
-        {info ? <Card info={info} /> : <Cover />}
-      </section>
-      <section className="collectionContainer">
-        <AccordionGroup
-          cardList={cardList}
-          setInfo={setInfo}
-          setCardList={setCardList}
-          isDarkMode={isDarkMode}
-          handleClick={handleClick}
-        />
-      </section>
+    <div className="appOuter">
+      <div
+        className={
+          isDarkMode ? "activeDisplay--dark activeDisplay " : "activeDisplay"
+        }
+      >
+        <section className="cardMain">
+          <h1 className="title">Zoonimals</h1>
+          {info ? <Card info={info} /> : <Cover />}
+        </section>
+        <section className="collectionContainer">
+          <AccordionGroup
+            cardList={cardList}
+            setInfo={setInfo}
+            setCardList={setCardList}
+            isDarkMode={isDarkMode}
+            handleClick={handleClick}
+          />
+        </section>
+      </div>
     </div>
   );
 }

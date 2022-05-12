@@ -1,8 +1,7 @@
 .grid {
   margin: -8px 0px 0px -8px;
   padding: 0;
-  padding-top: 20px;
-  padding-bottom: 28px;
+
   list-style: none;
   display: flex;
   justify-content: center;
@@ -12,6 +11,7 @@
   padding: 8px 0px 0px 8px;
 }
 .btnWrap {
+  margin-top: 15px;
   display: flex;
   justify-content: center;
 }
