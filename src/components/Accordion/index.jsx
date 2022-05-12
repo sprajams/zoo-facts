@@ -1,3 +1,5 @@
+import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
+import RemoveIcon from "@mui/icons-material/Remove";
 import "./style.scss";
 
 function Accordion(props) {
@@ -8,13 +10,12 @@ function Accordion(props) {
       <button onClick={handleClick} className="accordion__button">
         {title}
         {open ? (
-          // TODO: use material icons package
           <div>
-            <img src="/icons/minus.png" alt="minus or expanded icon" />
+            <RemoveIcon />
           </div>
         ) : (
           <div>
-            <img src="/icons/plus.png" alt="plus or expandable icon" />
+            <CloseOutlinedIcon />
           </div>
         )}
       </button>

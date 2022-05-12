@@ -27,13 +27,6 @@ function AccordionGroup(props) {
               return (
                 <li key={index}>
                   <CardMini handleClick={handleClick} animal={card} />
-
-                  {/* {card ? (
-                    // TODO: pass in active state
-                  ) : (
-                    // TODO: handle unknown inside CardMini
-                    <div className="cardMini__unknown"></div>
-                  )} */}
                 </li>
               );
             })}
