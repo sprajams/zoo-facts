@@ -1,12 +1,4 @@
-.newCardTitle {
-  padding: 20px 20px 0;
-  font-weight: 500;
-  font-size: 1em;
-  @media (min-width: 768px) {
-    padding: 25px 25px 0;
-  }
-}
-.newDeck {
+.grid {
   margin: -8px 0px 0px -8px;
   padding: 0;
   padding-top: 20px;
@@ -16,7 +8,10 @@
   justify-content: center;
   flex-wrap: wrap;
 }
-
-.newDeck__miniCard {
+.gridItem {
   padding: 8px 0px 0px 8px;
+}
+.btnWrap {
+  display: flex;
+  justify-content: center;
 }

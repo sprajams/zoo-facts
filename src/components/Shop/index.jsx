@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import CardMini from "../CardMini";
 import Button from "../Button";
-import "./style.scss";
+import styles from "./styles.module.scss";
 
 function Shop(props) {
   const { setInfo, setCardList } = props;
@@ -48,13 +48,13 @@ function Shop(props) {
     <div>
       {animalData.length ? (
         <>
-          <ul className="newDeck">
+          <ul className={styles.grid}>
             {animalData.map((animal, index) => {
               const handleClick = () => {
                 setCardNum(index);
               };
               return (
-                <li className="newDeck__miniCard" key={index}>
+                <li className={styles.gridItem} key={index}>
                   <CardMini handleClick={handleClick} animal={animal} />
                 </li>
               );
@@ -62,7 +62,7 @@ function Shop(props) {
           </ul>
         </>
       ) : null}
-      <div>
+      <div className={styles.btnWrap}>
         <Button
           onClick={fetchData}
           label={animalData.length ? "Anotha One" : "New Pack"}

@@ -1,4 +1,5 @@
-import styles from "./style.module.scss";
+import PropTypes from "prop-types";
+import styles from "./styles.module.scss";
 const Button = ({ onClick, label }) => {
   return (
     <button className={styles.btn} onClick={onClick}>
@@ -7,4 +8,10 @@ const Button = ({ onClick, label }) => {
     </button>
   );
 };
+
+Button.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  label: PropTypes.string,
+};
+
 export default Button;
