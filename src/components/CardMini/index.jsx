@@ -15,13 +15,11 @@ function CardMini(props) {
   const bgStyle = getCardBg(animal.animal_type);
 
   return (
-    <button
-      style={bgStyle}
-      className={active ? "cardMini active" : "cardMini"}
-      onClick={handleClick}
-    >
-      <div className="cardMini__inner"></div>
-    </button>
+    <div className={active ? "active" : null}>
+      <button style={bgStyle} className="cardMini" onClick={handleClick}>
+        <div className="cardMini__inner"></div>
+      </button>
+    </div>
   );
 }
 export default CardMini;
