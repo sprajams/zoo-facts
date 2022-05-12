@@ -8,6 +8,7 @@ function Accordion(props) {
       <button onClick={handleClick} className="accordion__button">
         {title}
         {open ? (
+          // TODO: use material icons package
           <div>
             <img src="/icons/minus.png" alt="minus or expanded icon" />
           </div>

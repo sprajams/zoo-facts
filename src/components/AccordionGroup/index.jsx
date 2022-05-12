@@ -6,7 +6,7 @@ import ToggleDark from "../ToggleDark";
 import "./style.scss";
 
 function AccordionGroup(props) {
-  const { cardList, setInfo, setCardList, handleClick } = props;
+  const { cardList, setInfo, setCardList, handleClick, isDarkMode } = props;
   const [activeIndex, setActiveIndex] = useState(0);
 
   const accordionData = [
@@ -16,33 +16,38 @@ function AccordionGroup(props) {
     },
     {
       title: "Collection",
-      detail: (
-        <ul className="collectionList">
-          {cardList.length > 0 ? (
-            cardList.map((card, index) => {
+      detail:
+        // TODO: match shop grid spacing
+        cardList.length > 0 ? (
+          <ul className="collectionList">
+            {cardList.map((card, index) => {
               const handleClick = () => {
                 setInfo(card);
               };
               return (
                 <li key={index}>
                   {card ? (
+                    // TODO: pass in active state
                     <CardMini handleClick={handleClick} animal={card} />
                   ) : (
+                    // TODO: handle unknown inside CardMini
                     <div className="cardMini__unknown"></div>
                   )}
                 </li>
               );
-            })
-          ) : (
-            <div className="collectionList--empty">
-              Oops, looks like this is empty 🥺 <br /> Please visit the Shop to
-              get started!
-            </div>
-          )}
-        </ul>
-      ),
+            })}
+          </ul>
+        ) : (
+          <div className="collectionList--empty">
+            Oops, looks like this is empty 🥺 <br /> Please visit the Shop to
+            get started!
+          </div>
+        ),
     },
-    { title: "Settings", detail: <ToggleDark handleClick={handleClick} /> },
+    {
+      title: "Settings",
+      detail: <ToggleDark handleClick={handleClick} isDarkMode={isDarkMode} />,
+    },
   ];
 
   console.log(cardList);

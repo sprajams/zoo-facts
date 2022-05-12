@@ -1,4 +1,5 @@
 .collectionList {
+  background: var(--theme--bg);
   margin: 0 auto;
   display: grid;
   list-style: none;
@@ -37,6 +38,7 @@
     height: 60px;
   }
 }
+// TODO: Remove padding
 .collectionList--empty {
   font-size: 1.5em;
   letter-spacing: 0.03em;

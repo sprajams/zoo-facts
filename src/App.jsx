@@ -12,23 +12,23 @@ function App() {
   const handleClick = () => {
     setDarkMode(!isDarkMode);
   };
-  const darkStyle = {
-    color: "white",
-    background: "black",
-  };
 
   return (
-    <div className="activeDisplay" style={isDarkMode ? darkStyle : null}>
+    <div
+      className={
+        isDarkMode ? "activeDisplay--dark activeDisplay " : "activeDisplay"
+      }
+    >
       <section className="cardMain">
         <h1 className="title">Zoonimals</h1>
         {info ? <Card info={info} /> : <Cover />}
       </section>
-
       <section className="collectionContainer">
         <AccordionGroup
           cardList={cardList}
           setInfo={setInfo}
           setCardList={setCardList}
+          isDarkMode={isDarkMode}
           handleClick={handleClick}
         />
       </section>

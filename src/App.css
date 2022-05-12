@@ -24,8 +24,17 @@
   }
 }
 .activeDisplay {
+  --theme-bg: white;
+  --theme-color: black;
   padding: 10px 24px;
 }
+
+.activeDisplay--dark {
+  --theme-bg: black;
+  --theme-color: white;
+  background: black;
+}
+
 @media (min-width: 768px) {
   .activeDisplay {
     display: grid;
