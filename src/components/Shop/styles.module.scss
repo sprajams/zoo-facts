@@ -1,17 +1,22 @@
 .grid {
   margin: -8px 0px 0px -8px;
   padding: 0;
-
   list-style: none;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  @media (min-width: 768px) {
+    margin: -18px 0px 0px -18px;
+  }
 }
 .gridItem {
   padding: 8px 0px 0px 8px;
+  @media (min-width: 768px) {
+    padding: 18px 0px 0px 18px;
+  }
 }
 .btnWrap {
   margin-top: 15px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }

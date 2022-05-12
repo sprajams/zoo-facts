@@ -10,6 +10,11 @@
   border-radius: 8px;
   position: relative;
   text-align: center;
+
+  &:disabled {
+    cursor: initial;
+    color: black;
+  }
 }
 .btnTop,
 .btnBottom {
@@ -28,13 +33,20 @@
   align-items: center;
   transition: top 0.1s ease-in;
 }
+.btn:disabled .btnTop {
+  background: rgba(211, 211, 211, 1);
+}
+.btn:disabled .btnBottom {
+  background: rgba(193, 193, 193, 1);
+}
+
 .btnBottom {
   background: #d15711;
   bottom: 0px;
 }
-.btn:hover .btnTop {
+.btn:hover:not(:disabled) .btnTop {
   top: 3px;
 }
-.btn:active .btnTop {
+.btn:active:not(:disabled) .btnTop {
   top: 6px;
 }

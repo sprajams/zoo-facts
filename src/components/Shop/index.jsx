@@ -63,6 +63,7 @@ function Shop(props) {
         </>
       ) : null}
       <div className={styles.btnWrap}>
+        <Button disabled label="View Packs" />
         <Button
           onClick={fetchData}
           label={animalData.length ? "Anotha One" : "New Pack"}
