@@ -21,7 +21,6 @@ function App() {
         }
       >
         <section className="cardMain">
-          <h1 className="title">Zoonimals</h1>
           {info ? <Card info={info} /> : <Cover />}
         </section>
         <section className="collectionContainer">

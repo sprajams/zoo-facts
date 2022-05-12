@@ -9,7 +9,7 @@
   grid-template-columns: repeat(5, 1fr);
   padding: 0;
   overflow-y: auto;
-  height: 250px;
+  height: 210px;
   @media (min-width: 768px) {
     grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
     grid-gap: 18px 0px;
@@ -19,6 +19,7 @@
   display: flex;
   height: 100%;
   flex-direction: column;
+  justify-content: center;
 }
 
 .collectionList--empty {
