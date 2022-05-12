@@ -26,7 +26,11 @@ function AccordionGroup(props) {
               };
               return (
                 <li key={index}>
-                  <CardMini handleClick={handleClick} animal={card} />
+                  <CardMini
+                    handleClick={handleClick}
+                    animal={card}
+                    index={index}
+                  />
                 </li>
               );
             })}
