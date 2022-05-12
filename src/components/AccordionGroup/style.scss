@@ -10,7 +10,6 @@
   padding: 0;
   overflow-y: auto;
   height: 250px;
-  padding: 0 5px;
   @media (min-width: 768px) {
     grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
     grid-gap: 18px 0px;
@@ -21,29 +20,11 @@
   height: 100%;
   flex-direction: column;
 }
-.cardMini__unknown {
-  width: 40px;
-  height: 50px;
-  border: none;
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-  background: rgba(214, 214, 214, 0.5);
-  font-weight: 500;
-  font-size: 0.34em;
-  border: 2px dashed rgb(237, 200, 140);
-  @media (min-width: 768px) {
-    width: 48px;
-    height: 60px;
-  }
-}
-// TODO: Remove padding
+
 .collectionList--empty {
   font-size: 1.5em;
   letter-spacing: 0.03em;
   line-height: 1.25em;
-  padding: 0 50px;
   grid-column-start: 1;
   grid-column-end: span 5;
 }
