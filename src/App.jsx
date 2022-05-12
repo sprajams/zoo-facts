@@ -27,6 +27,7 @@ function App() {
           <AccordionGroup
             cardList={cardList}
             setInfo={setInfo}
+            info={info}
             setCardList={setCardList}
             isDarkMode={isDarkMode}
             handleClick={handleClick}

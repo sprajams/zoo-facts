@@ -13,12 +13,12 @@
     height: 60px;
   }
 }
-
 .cardMini__inner {
   background-color: rgba(100, 99, 99, 0.554);
   height: 18px;
   width: 24px;
   margin: 0 auto;
+  border: none;
   @media (min-width: 768px) {
     width: 32px;
     height: 24px;
@@ -42,4 +42,7 @@
     width: 48px;
     height: 60px;
   }
+}
+.active {
+  border: 3px solid rgba(255, 116, 38, 1);
 }

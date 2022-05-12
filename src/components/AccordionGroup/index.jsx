@@ -6,13 +6,14 @@ import ToggleDark from "../ToggleDark";
 import "./style.scss";
 
 function AccordionGroup(props) {
-  const { cardList, setInfo, setCardList, handleClick, isDarkMode } = props;
+  const { cardList, setInfo, setCardList, handleClick, isDarkMode, info } =
+    props;
   const [activeIndex, setActiveIndex] = useState(0);
 
   const accordionData = [
     {
       title: "Shop",
-      detail: <Shop setInfo={setInfo} setCardList={setCardList} />,
+      detail: <Shop setInfo={setInfo} setCardList={setCardList} info={info} />,
     },
     {
       title: "Collection",
@@ -48,7 +49,6 @@ function AccordionGroup(props) {
     },
   ];
 
-  console.log(cardList);
   return (
     <div className="accordionGroup">
       {accordionData.map((data, index) => {

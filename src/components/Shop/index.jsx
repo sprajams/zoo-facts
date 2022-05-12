@@ -4,7 +4,7 @@ import Button from "../Button";
 import styles from "./styles.module.scss";
 
 function Shop(props) {
-  const { setInfo, setCardList } = props;
+  const { setInfo, setCardList, info } = props;
   const [animalData, getAnimalData] = useState([]);
 
   //get 5 random animal info
@@ -36,6 +36,7 @@ function Shop(props) {
 
   const [cardNum, setCardNum] = useState(NaN);
 
+  // active mini card
   useEffect(() => {
     if (animalData && animalData[cardNum]) {
       let activeAnimal = animalData[cardNum];
@@ -53,9 +54,19 @@ function Shop(props) {
               const handleClick = () => {
                 setCardNum(index);
               };
+
+              let isActive = false;
+              if (info) {
+                isActive = animal.id === info.id;
+              }
+
               return (
                 <li className={styles.gridItem} key={index}>
-                  <CardMini handleClick={handleClick} animal={animal} />
+                  <CardMini
+                    handleClick={handleClick}
+                    animal={animal}
+                    active={isActive}
+                  />
                 </li>
               );
             })}

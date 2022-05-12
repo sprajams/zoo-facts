@@ -2,7 +2,7 @@ import { getCardBg } from "../../util";
 import "./style.scss";
 
 function CardMini(props) {
-  const { handleClick, animal, index } = props;
+  const { handleClick, animal, index, active } = props;
 
   function addLeadingZero(num, totalLength) {
     return String(num).padStart(totalLength, "0");
@@ -13,8 +13,13 @@ function CardMini(props) {
     return <div className="cardMini__unknown">{formattedIndex}</div>;
   }
   const bgStyle = getCardBg(animal.animal_type);
+
   return (
-    <button style={bgStyle} className="cardMini" onClick={handleClick}>
+    <button
+      style={bgStyle}
+      className={active ? "cardMini active" : "cardMini"}
+      onClick={handleClick}
+    >
       <div className="cardMini__inner"></div>
     </button>
   );
