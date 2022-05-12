@@ -1,4 +1,4 @@
-import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
+import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import "./style.scss";
 
@@ -15,7 +15,7 @@ function Accordion(props) {
           </div>
         ) : (
           <div>
-            <CloseOutlinedIcon />
+            <AddIcon />
           </div>
         )}
       </button>
