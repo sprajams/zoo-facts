@@ -8,18 +8,14 @@ import AccordionGroup from "./components/AccordionGroup";
 function App() {
   const [info, setInfo] = useState(null);
   const [cardList, setCardList] = useState([]);
-  const [isDarkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
   const handleClick = () => {
-    setDarkMode(!isDarkMode);
+    setDarkMode(!darkMode);
   };
 
   return (
-    <div className="appOuter">
-      <div
-        className={
-          isDarkMode ? "activeDisplay--dark activeDisplay " : "activeDisplay"
-        }
-      >
+    <div className={darkMode ? "activeDisplay--dark appOuter " : "appOuter"}>
+      <div className="activeDisplay">
         <section className="cardMain">
           {info ? <Card info={info} /> : <Cover />}
         </section>
@@ -29,7 +25,7 @@ function App() {
             setInfo={setInfo}
             info={info}
             setCardList={setCardList}
-            isDarkMode={isDarkMode}
+            darkMode={darkMode}
             handleClick={handleClick}
           />
         </section>

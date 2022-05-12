@@ -1,26 +1,17 @@
 import "./style.scss";
-import Switch from "@mui/material/Switch";
-import { styled } from "@mui/material/styles";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import ToggleIOS from "../ToggleIOS";
 
 function ToggleDark(props) {
-  const { handleClick, isDarkMode } = props;
+  const { handleClick, darkMode } = props;
 
   return (
-    <div>
-      {/* <span className="lightMode">Light Mode</span>
-      <Switch
-        checked={isDarkMode}
-        onChange={handleClick}
-            />
-      <span className="darkMode">Dark Mode</span> */}
+    <div className="modeWrap">
+      <div>Dark Mode</div>
       <FormControlLabel
         control={<ToggleIOS sx={{ m: 1 }} />}
-        label="Dark Mode"
-        checked={isDarkMode}
+        checked={darkMode}
         onChange={handleClick}
-        labelPlacement="start"
       />
     </div>
   );

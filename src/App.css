@@ -6,7 +6,11 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+}
+@media (min-width: 768px) {
+  .appOuter {
+    align-items: center;
+  }
 }
 .collectionContainer {
   min-width: 325px;
@@ -28,9 +32,9 @@
 }
 
 .activeDisplay--dark {
-  --theme-bg: black;
+  --theme-bg: rgb(7, 7, 20);
   --theme-color: white;
-  background: black;
+  background: var(--theme-bg);
 }
 
 @media (min-width: 768px) {

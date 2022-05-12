@@ -1,20 +1,6 @@
-.toggle {
+.modeWrap {
   display: flex;
-  border-radius: 8px;
-  padding: 5px;
-  border: 2px solid red;
-  position: absolute;
-}
-.mode {
-  display: block;
-  width: 60px;
-  padding: 5px 0;
-  text-align: center;
-  cursor: pointer;
-}
-.lightMode {
-  color: red;
-}
-.darkMode {
-  color: maroon;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.5em;
 }

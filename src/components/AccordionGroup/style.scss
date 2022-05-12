@@ -1,5 +1,4 @@
 .collectionList {
-  background: var(--theme--bg);
   margin: 0 auto;
   display: grid;
   list-style: none;
@@ -9,12 +8,13 @@
   grid-template-columns: repeat(5, 1fr);
   padding: 0;
   overflow-y: auto;
-  height: 210px;
+  height: 250px;
   @media (min-width: 768px) {
     grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
     grid-gap: 18px 0px;
   }
 }
+
 .accordionGroup {
   display: flex;
   height: 100%;

@@ -1,6 +1,9 @@
+import clsx from "clsx";
 import PropTypes from "prop-types";
 import styles from "./styles.module.scss";
-const Button = ({ onClick, label, disabled }) => {
+
+const Button = ({ onClick, label, disabled, darkMode }) => {
+  //if the button is disabled display the below styles
   if (disabled) {
     return (
       <button className={styles.btn} disabled>
@@ -9,11 +12,15 @@ const Button = ({ onClick, label, disabled }) => {
       </button>
     );
   }
-
+  //all other buttons will have the below styling
   return (
     <button className={styles.btn} onClick={onClick}>
-      <span className={styles.btnTop}>{label}</span>
-      <span className={styles.btnBottom}></span>
+      <span className={clsx(styles.btnTop, darkMode && styles.isDark)}>
+        {label}
+      </span>
+      <span
+        className={clsx(styles.btnBottom, darkMode && styles.isDark)}
+      ></span>
     </button>
   );
 };

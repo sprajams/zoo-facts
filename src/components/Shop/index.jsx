@@ -4,7 +4,7 @@ import Button from "../Button";
 import styles from "./styles.module.scss";
 
 function Shop(props) {
-  const { setInfo, setCardList, info } = props;
+  const { setInfo, setCardList, info, darkMode } = props;
   const [animalData, getAnimalData] = useState([]);
 
   //get 5 random animal info
@@ -78,6 +78,7 @@ function Shop(props) {
         <Button
           onClick={fetchData}
           label={animalData.length ? "Anotha One" : "New Pack"}
+          darkMode={darkMode}
         />
       </div>
     </div>

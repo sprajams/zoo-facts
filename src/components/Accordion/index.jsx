@@ -3,10 +3,10 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import "./style.scss";
 
 function Accordion(props) {
-  const { title, detail, handleClick, open } = props;
+  const { title, detail, handleClick, open, darkMode } = props;
 
   return (
-    <div className="accordion">
+    <div className={darkMode ? "accordion accordion--dark" : "accordion"}>
       <button onClick={handleClick} className="accordion__button">
         {title}
         {open ? (

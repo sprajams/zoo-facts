@@ -3,13 +3,15 @@
   cursor: pointer;
   border: none;
   background: inherit;
+  color: inherit;
   display: flex;
   justify-content: space-between;
   font-family: "Teko", sans-serif;
   font-size: 2.5em;
+  line-height: 1em;
   text-transform: uppercase;
   font-weight: 500;
-  padding: 0;
+  padding: 10px 0 2px 0;
 }
 .accordion {
   display: flex;
@@ -21,5 +23,10 @@
 }
 .accordion__detail {
   padding-top: 15px;
-  padding-bottom: 15px;
+  padding-bottom: 10px;
+}
+
+.accordion--dark {
+  background: rgb(40, 40, 48);
+  color: white;
 }
