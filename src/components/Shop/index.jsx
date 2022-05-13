@@ -69,7 +69,7 @@ function Shop(props) {
             })
           : [...Array(5)].map((e, i) => {
               return (
-                <li className={styles.gridItem}>
+                <li className={styles.gridItem} key={i}>
                   <CardMini />
                 </li>
               );
