@@ -47,19 +47,16 @@ function Shop(props) {
   //buttons for each of the 5 random animals fetched from the API
   return (
     <div>
-      {animalData.length ? (
-        <>
-          <ul className={styles.grid}>
-            {animalData.map((animal, index) => {
+      <ul className={styles.grid}>
+        {animalData.length
+          ? animalData.map((animal, index) => {
               const handleClick = () => {
                 setCardNum(index);
               };
-
               let isActive = false;
               if (info) {
                 isActive = animal.id === info.id;
               }
-
               return (
                 <li className={styles.gridItem} key={index}>
                   <CardMini
@@ -69,10 +66,16 @@ function Shop(props) {
                   />
                 </li>
               );
+            })
+          : [...Array(5)].map((e, i) => {
+              return (
+                <li className={styles.gridItem}>
+                  <CardMini />
+                </li>
+              );
             })}
-          </ul>
-        </>
-      ) : null}
+      </ul>
+
       <div className={styles.btnWrap}>
         <Button disabled label="View Packs" />
         <Button

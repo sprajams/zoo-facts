@@ -10,7 +10,11 @@ function CardMini(props) {
   let formattedIndex = addLeadingZero(parseInt(index) + 1, 3);
 
   if (!animal) {
-    return <div className="cardMini__unknown">{formattedIndex}</div>;
+    return (
+      <div className="cardMini__unknown">
+        {isNaN(formattedIndex) ? null : formattedIndex}
+      </div>
+    );
   }
   const bgStyle = getCardBg(animal.animal_type);
 
