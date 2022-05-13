@@ -23,9 +23,12 @@
 }
 
 .collectionList--empty {
-  font-size: 1.5em;
+  font-size: 1.2em;
   letter-spacing: 0.03em;
   line-height: 1.25em;
   grid-column-start: 1;
   grid-column-end: span 5;
+  @media (min-width: 768px) {
+    font-size: 1.5em;
+  }
 }

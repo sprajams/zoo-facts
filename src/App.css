@@ -42,19 +42,19 @@
     display: grid;
     padding: 0 20px;
     width: 100%;
+    grid-template-columns: repeat(12, 1fr);
   }
   .cardMain {
     grid-column-start: 1;
     grid-column-end: 7;
   }
   .collectionContainer {
-    grid-column-start: 8;
+    grid-column-start: 7;
     grid-column-end: 13;
   }
 }
 @media (min-width: 1024px) {
   .activeDisplay {
-    grid-template-columns: repeat(12, 1fr);
     grid-gap: 20px;
     padding: 0 75px;
   }
